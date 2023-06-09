@@ -12,6 +12,7 @@ import NavBar from './components/blocks/nav/nav.jsx';
 //importamos las views
 import Home from './components/views/home/home';
 import Favorites from "./components/views/favorites/favorites"
+import About from './components/views/about/about';
 
 function App() {
 
@@ -142,6 +143,7 @@ function App() {
             path="/" 
             element={<Home characters={filtered} onClose={closeHandlers}/>}
           />
+          <Route path='/about' element={<About />} />
           <Route path="/fav" element={<Favorites />} />
           
         </Routes>

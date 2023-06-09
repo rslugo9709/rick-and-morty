@@ -26,6 +26,7 @@ export default function Favorites(){
     
     console.log("se renderiza el componente favoritos")
     console.log(favorites)
+    let ver = false;
     return(
         //esto se puede cambiar 
         <div>
@@ -49,7 +50,7 @@ export default function Favorites(){
                 Reset
             </button>
 
-            <Cards characters={favorites} />
+            <Cards characters={favorites} ver={ver} />
         </div>
     )
 

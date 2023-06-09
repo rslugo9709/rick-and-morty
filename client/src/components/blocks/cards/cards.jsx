@@ -23,6 +23,7 @@ export default function Cards(props) {
              image={char.image}
              id={char.id}
              onClose={props.onClose}
+             ver={props.ver}
              /> )
           }
        </div>

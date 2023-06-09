@@ -80,8 +80,9 @@ function Card(props){
            <button onClick={() => favoriteHandler(character)}>🤍</button>
         )
         }
-     
-        <button className={style.cerrar} onClick={() => onClose(props.id)}>X</button>
+
+        {props.ver ?  <button className={style.cerrar} onClick={() => onClose(props.id)}>X</button> : null}
+        
          <Link to={`/detail/${props.id}`}>
          <h2  className={style.link}>{props.name}</h2>
          </Link>
