@@ -13,7 +13,8 @@ import NavBar from './components/blocks/nav/nav.jsx';
 import Home from './components/views/home/home';
 import Favorites from "./components/views/favorites/favorites"
 import About from './components/views/about/about';
-
+import Login from './components/views/ingresar/ingresar';
+import Creedentials from './components/views/creedentials/creedentials';
 function App() {
 
   const location = useLocation();
@@ -130,22 +131,27 @@ function App() {
 
   return (
     <div className='App'>
-        
-        <NavBar onSearch={searchHandler}
-          onChange={changeHandler} logout={logoutHandler} />
+              <div>
+        {/*Si en la ruta donde estoy es diferente a una ruta diferente a la raiz */}
+        {(location.pathname !== "/" && location.pathname !== "/creedentials") && <NavBar onSearch={searchHandler} onChange={changeHandler} logout={logoutHandler}/>}
+      </div>
+
 
         <Routes>
+          <Route path='/' element={<Login />} />
           <Route 
             path="/home" 
             element={<Home characters={filtered} onClose={closeHandlers}/>}
           />
-          <Route 
+          {/*<Route 
             path="/" 
             element={<Home characters={filtered} onClose={closeHandlers}/>}
-          />
+          />*/ }
+          <Route path='/creedentials' element={<Creedentials />} />
           <Route path='/about' element={<About />} />
           <Route path="/fav" element={<Favorites />} />
           
+
         </Routes>
     </div>
   )

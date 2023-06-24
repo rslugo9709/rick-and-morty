@@ -1,0 +1,34 @@
+.containergen{
+    background-color: black;
+    width: 100%;
+    height: 100vh;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.boton{
+    width: 20%;
+    height: 10%;
+    background-color: azure;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    color: black;
+    border: solid 2px rgb(6, 59, 94);
+}
+
+
+.boton:hover{
+    background-color: rgb(6, 59, 94);
+    color: azure;
+    border: solid 2px white;
+    text-transform: uppercase;
+}

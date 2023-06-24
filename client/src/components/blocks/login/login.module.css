@@ -1,0 +1,54 @@
+.container{
+    width: 100%;
+    height: 100vh; 
+    background-color: black; 
+
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+
+input{
+    width: 300px;
+    text-align: center;
+    color: black;
+}
+
+fieldset{
+    padding: 30px;
+    border: 5px solid white;
+    height: 200px;
+}
+
+.login{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    align-self: center;
+    
+}
+
+
+.login:hover{
+    background-color: rgb(6, 59, 94);
+    color: azure;
+    border: solid 2px white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.danger{
+    font-size: 10px;
+    color: red;
+    margin-top: 5px;
+    text-align: center;
+
+
+}
+
+.submitB{
+    display: flex;
+    justify-content: center;
+}

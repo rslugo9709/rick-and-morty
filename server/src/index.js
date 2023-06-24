@@ -8,6 +8,9 @@ const server = express();
 //traemos al router
 const router = require("./routes/index.js")
 
+//importamos la base de datos
+const { conn } = require('./DB_connection');
+
 server.use((req, res, next) =>{
     //aplicamos los middleware
     res.header("Access-Control-Allow-Origin", "*");
