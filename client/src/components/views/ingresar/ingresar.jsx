@@ -12,7 +12,7 @@ export default function Login(){
             
 
 
-            <Link to={"/creedentials"} className={styles.boton}>Ingresar</Link>
+            <Link to={"/login"} className={styles.boton}>Ingresar</Link>
 
             
         </div>

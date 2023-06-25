@@ -12,9 +12,9 @@ export default function NavBar({onSearch, onChange, logout}){
                     <Link to={"/home"} className={styles.links}>Home</Link>
                     <Link to={"/about"} className={styles.links}>About</Link>
                     <Link to={"/fav"} className={styles.links}>Favorites </Link>
-                    <p className="link" onClick={logout}>
+                    <Link className={styles.links} onClick={logout}> 
                     Logout
-                    </p>
+                    </Link>
                 </div>
             <SearchBar onSearch={onSearch} />
             </nav>

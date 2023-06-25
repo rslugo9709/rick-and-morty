@@ -15,6 +15,7 @@ import Favorites from "./components/views/favorites/favorites"
 import About from './components/views/about/about';
 import Login from './components/views/ingresar/ingresar';
 import Creedentials from './components/views/creedentials/creedentials';
+import Detail from './components/views/details/details';
 function App() {
 
   const location = useLocation();
@@ -34,9 +35,10 @@ function App() {
   async function loginHandler(userData){
     const {email, password} = userData;
     const url = "https://localhost:3001/rickandmorty/login";
-
+    console.log(email, password);
     try{
-
+      setAccess(true);
+      navigate("/home");
       const response = (
         await axios(url + `?email=${email}&password=${password}`)
       ).data;
@@ -68,8 +70,6 @@ function App() {
     //funcion que permite capturar lo que escribe el usuario
     function changeHandler(e){
       e.preventDefault();
-
-
 
     }
 
@@ -133,7 +133,7 @@ function App() {
     <div className='App'>
               <div>
         {/*Si en la ruta donde estoy es diferente a una ruta diferente a la raiz */}
-        {(location.pathname !== "/" && location.pathname !== "/creedentials") && <NavBar onSearch={searchHandler} onChange={changeHandler} logout={logoutHandler}/>}
+        {(location.pathname !== "/" && location.pathname !== "/login") && <NavBar onSearch={searchHandler} onChange={changeHandler} logout={logoutHandler}/>}
       </div>
 
 
@@ -147,7 +147,8 @@ function App() {
             path="/" 
             element={<Home characters={filtered} onClose={closeHandlers}/>}
           />*/ }
-          <Route path='/creedentials' element={<Creedentials />} />
+          <Route path='/login' element={<Creedentials login={loginHandler} />} />
+          <Route path='/detail/:id' element={<Detail />} />
           <Route path='/about' element={<About />} />
           <Route path="/fav" element={<Favorites />} />
           

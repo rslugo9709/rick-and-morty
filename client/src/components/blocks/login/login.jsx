@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./login.module.css"
 import { useState } from "react";
-//import { validation } from "./validations";
+import { validate } from "../../../utils/validations";
 
-export default function Login(props){
+export default function Login({login}){
 
     const [userData, setUserData] = useState({
         username:"",
@@ -20,7 +20,7 @@ export default function Login(props){
             {...userData, [name]: value}
         )
         setErrors(
-            validation(
+            validate(
                 {
                     ...userData,
                     [e.target.name]: e.target.value
@@ -28,10 +28,10 @@ export default function Login(props){
             )
         )
     }
-
+    console.log(userData);
     function handleSubmit(e){
         e.preventDefault();
-        props.login(userData);
+        login(userData);
     }
 
     return(
