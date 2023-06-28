@@ -32,9 +32,10 @@ const sequelize = new Sequelize(
  const { User, Favorite } = sequelize.models;
 
 //creamos la relacion de varios a varios
-User.belongsToMany(Favorite, {through: "user_favorite"});
-Favorite.belongsToMany(User, {through: "user_favorite"});
+User.belongsToMany(Favorite, {through: "user_favorite",timestamps: false });
+Favorite.belongsToMany(User, {through: "user_favorite", timestamps: false });
 
+console.log("base de datos conectada")
 
 module.exports = {
    User,

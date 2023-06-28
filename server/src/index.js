@@ -31,11 +31,13 @@ server.use("/rickandmorty", router )
 
 
 
-//le decimos al server que escuche los cambios
-server.listen(PORT, () =>{
-    console.log("server listening on port: " + PORT);
-})
+//le decimos al server que escuche los cambios despues de haber levantado la base de datos
 
+conn.sync({ force: true }).then(() => {
+  server.listen(PORT, () => {
+    console.log("Server raised");
+  });
+});
 
 
 

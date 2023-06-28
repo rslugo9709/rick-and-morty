@@ -33,18 +33,23 @@ function App() {
   //Hacemos las funciones para hacer el login
 
   async function loginHandler(userData){
+    console.log("se imprime el user data")
+    console.log(userData)
     const {email, password} = userData;
-    const url = "https://localhost:3001/rickandmorty/login";
+    const url = "http://localhost:3001/rickandmorty/login";
     console.log(email, password);
     try{
-      setAccess(true);
-      navigate("/home");
+      //setAccess(true);
+      //navigate("/home");
       const response = (
         await axios(url + `?email=${email}&password=${password}`)
       ).data;
-
+      console.log(response)
+      if(response.access){
+        navigate("/home");
+      }
       setAccess(response);
-      access && navigate("/home");
+      console.log(response.access)
 
     }catch(error){
       alert(error.message)

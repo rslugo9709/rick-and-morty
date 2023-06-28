@@ -6,11 +6,11 @@ import { validate } from "../../../utils/validations";
 export default function Login({login}){
 
     const [userData, setUserData] = useState({
-        username:"",
+        email:"",
         password:""
     });
     const [errors, setErrors] = useState({
-        username:"",
+        email:"",
         password:""
     });
 
@@ -28,7 +28,7 @@ export default function Login({login}){
             )
         )
     }
-    console.log(userData);
+    //console.log(userData);
     function handleSubmit(e){
         e.preventDefault();
         login(userData);
@@ -42,8 +42,8 @@ export default function Login({login}){
                         Username:
                     </label>
                     <br />
-                    <input id="user" name="username" placeholder="Please, enter your username" type="text" value={userData.username} onChange={handleInputChange} />
-                    <p className={styles.danger}>{errors.username}</p>
+                    <input id="user" name="email" placeholder="Please, enter your username" type="text" value={userData.email} onChange={handleInputChange} />
+                    <p className={styles.danger}>{errors.email}</p>
 
                     <br />
                     <label htmlFor="password">
