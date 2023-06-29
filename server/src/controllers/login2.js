@@ -12,15 +12,18 @@ const login2 = async (req, res) =>{
         console.log("pase el primer if")
         let user={}
         try {
-            let user= await User.findOne({
+             let user= await User.findOne({
                 where: {
                     email:email,
                 }
+                
             }) 
+            console.log("se consigue el user")
         } catch (error) {
             console.log("user no creado")
         }
         if(user){
+            console.log("como no se consiguio el user se crea uno")
             user ={
                 email: "ras@norte.com",
                 password: "Holi123"
